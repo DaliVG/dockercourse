@@ -1,0 +1,4 @@
+- docker container run hello-world
+- docker container ls
+- docker container rm nombre_contenedor
+- docker images ls -a
