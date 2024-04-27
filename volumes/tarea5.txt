@@ -7,6 +7,97 @@ Creacion de redes para hablar entre si.
 
 - docker network
 
+$ docker network connect world-app 9bd
+* Aqui conectamos a nuestra red el phpmyadmin.
+
+$ docker network inspect world-app
+[
+    {
+        "Name": "world-app",
+        "Id": "658c9c1e48c28314ab0ca56e7d3ed2c820eec9e7d163f4185b74397a7d56f19f",
+        "Created": "2024-04-27T15:19:48.6211113Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.20.0.0/16",
+                    "Gateway": "172.20.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "9bd849551df5502483de7c9341160e079c3726244ca7a19e1942ff135ea48a87": {
+                "Name": "phpmyadmin",
+                "EndpointID": "ba88533fa1909d849d5b698706be14cd10a4265c50f5fc5bbe5fae33cd548121",
+                "MacAddress": "02:42:ac:14:00:02",
+                "IPv4Address": "172.20.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {}
+    }
+]
+
+
 
 Documentacion
 https://docs.docker.com/engine/tutorials/networkingcontainers/
+
+$ docker network inspect world-app
+[
+    {
+        "Name": "world-app",
+        "Id": "658c9c1e48c28314ab0ca56e7d3ed2c820eec9e7d163f4185b74397a7d56f19f",
+        "Created": "2024-04-27T15:19:48.6211113Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.20.0.0/16",
+                    "Gateway": "172.20.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "67aeae2dacc89746cec4c964c5c418983ed359be5fd1e34715701c523c1ce7c4": {
+                "Name": "world-db",
+                "EndpointID": "6ae192d8d06bafb8feb1396fc223c6c6ced7c83a6750c21cbf2e258f7472337b",
+                "MacAddress": "02:42:ac:14:00:03",
+                "IPv4Address": "172.20.0.3/16",
+                "IPv6Address": ""
+            },
+            "9bd849551df5502483de7c9341160e079c3726244ca7a19e1942ff135ea48a87": {
+                "Name": "phpmyadmin",
+                "EndpointID": "ba88533fa1909d849d5b698706be14cd10a4265c50f5fc5bbe5fae33cd548121",
+                "MacAddress": "02:42:ac:14:00:02",
+                "IPv4Address": "172.20.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {}
+    }
+]
