@@ -17,3 +17,6 @@ docker container run \
 phpmyadmin:5.2.0-apache 
 
 y ya a través del phpmyadmin se puede acceder ya a todo. en server poner el world db y sus credenciales.
+
+$ docker network rm world-app
+ Para eliminar la netwok 
