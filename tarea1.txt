@@ -1,0 +1,21 @@
+1. Montar una base de datos con MARIADB con el siguiente comando:
+ 
+ docker container run \
+ -e MARIADB_RANDOM_ROOT_PASSWORD=yes \
+ -dp 3306:3306 \
+ mariadb:jammy
+
+2. Obtener el listado de los contenedores activos.
+docker containert ls -a 
+* -a activos.
+
+Resultado:
+
+$ docker container ls -a
+CONTAINER ID   IMAGE                   COMMAND                  CREATED              STATUS                      PORTS                      NAMES
+58bd9aa7c382   mariadb:jammy           "docker-entrypoint.s…"   About a minute ago   Up About a minute           0.0.0.0:3306->3306/tcp     youthful_bartik
+
+genera en el log una contraseña random:
+}d$XNc|k6Zw>|_&W,zj/_e:aTV:mrs;p
+
+Si ponemos root2 da un error y se refleja en el log.
