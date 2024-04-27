@@ -1,0 +1,18 @@
+docker volume create world-db
+
+* espacio persistente. 
+
+ docker volume inspect world-db
+[
+    {
+        "CreatedAt": "2024-04-27T14:54:44Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/world-db/_data",
+        "Name": "world-db",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+
+$ docker container run -e MARIADB_USER=example-user -e MARIADB_PASSWORD=user-password -e MARIADB_ROOT_PASSWORD=root-secret-password -e MARIADB_DATABASE=world-db -dp 3306:3306 --name world-db --volume world-db:/var/lib/mysql mariadb:jammy
