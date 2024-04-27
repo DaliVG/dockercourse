@@ -1,0 +1,14 @@
+1. Detener contenedor y borrar imagenes.
+docker container stop <contenedor>
+
+ docker image ls
+ docker image rm -f 8bafc7c9f197
+ *-f para forzarlo
+
+- Docker Layers - Capas
+
+Las capas son el resultado de la forma en que se
+construyen las imágenes de Docker. Cada paso
+en un Dockerfile crea una nueva "capa" que es
+esencialmente una diferencia de los cambios en
+el sistema de archivos desde el último paso.
