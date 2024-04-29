@@ -1,0 +1,9 @@
+ docker exec -it ad4 /bin/sh
+/app $ ls
+README.md            node_modules         test                 yarn.lock
+dist                 package.json         tsconfig.build.json
+nest-cli.json        src                  tsconfig.json
+/app $ 
+
+
+Asi entramos dentro del container 
